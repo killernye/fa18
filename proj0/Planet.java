@@ -28,6 +28,21 @@ public class Planet {
 		imgFileName = p.imgFileName;
 	}
 
+	/** Updata the planet's position and velocity instance variables
+	*	@param dt A small period of time during which the given forces
+	*	exerted on the planet
+	*	@param fX The force exerted in the X direction
+	*	@param fY The force exerted in the Y direction
+	*/
+	public void update(double dt, double fX, double fY) {
+		double aX = fX / mass;
+		double aY = fY / mass;
+		xxVel += dt * aX;
+		yyVel += dt * aY;
+		xxPos += dt * xxVel;
+		yyPos += dt * yyVel;
+	}
+
 	/** Calculates the force exerted by all planets in a given array
 	* 	upon the current Planet in the X direction.
 	*	@param planets A given array of planets
