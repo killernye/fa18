@@ -43,6 +43,11 @@ public class Planet {
 		yyPos += dt * yyVel;
 	}
 
+	/** Draw the Planet's image at the Planet's position. */
+	public void draw() {
+		StdDraw.picture(xxPos, yyPos, "./images/" + imgFileName);
+	}
+
 	/** Calculates the force exerted by all planets in a given array
 	* 	upon the current Planet in the X direction.
 	*	@param planets A given array of planets
